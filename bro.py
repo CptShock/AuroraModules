@@ -1,5 +1,4 @@
 import willie
-import random
 
 @willie.module.commands('brocode')
 
