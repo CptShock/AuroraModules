@@ -5,7 +5,7 @@ def ans(bot, trigger):
 	username = trigger.group(2)
     from getpass import getpass
     password = getpass()
-
+    bot.say("test")
     request = {"api_dev_key":devkey, "api_user_name":username, "api_user_password":password}
 
     try:
