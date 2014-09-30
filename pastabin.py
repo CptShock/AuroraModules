@@ -12,4 +12,4 @@ def ans(bot, trigger):
 	fetch(varurl,varparams)
 def fetch(url, params):
   params = urllib.urlencode(varparams)
-  f = urllib.request.urlopen(varurl, params)
+  f = urllib.urlopen(varurl, params)
