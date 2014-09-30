@@ -1,8 +1,6 @@
-from willie.module import commands
-import urllib2, urllib, optparse, sys, os.path,random
+import willie,urllib2, urllib, optparse, sys, os.path,random
 
-
-@commands('pastabin')
+@willie.module.commands('pastabin')
 def ans(bot, trigger):
 	vardevkey = "e556580a88095cbfb11184fa1a97863b"
 	vartest = "test123"
