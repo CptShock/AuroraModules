@@ -9,7 +9,7 @@ varparams = {"api_dev_key":vardevkey,"api_option":varpaste,"api_paste_code":vart
 
 @commands('pastabin')
 def ans(bot, trigger):
-	fetch(varurl,varparams,varmethod)
+	fetch(varurl,varparams)
 def fetch(url, params):
   varparams = urllib.parse.urlencode(varparams)
   f = urllib.request.urlopen(varurl, varparams)
