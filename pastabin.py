@@ -8,7 +8,6 @@ def ans(bot, trigger):
 	varpaste = "paste"
 	varparams = {"api_dev_key":vardevkey,"api_option":varpaste,"api_paste_code":vartest}
 	fetch(varurl,varparams)
-def fetch(url, params):
-  params = urllib.urlencode(varparams)
-  f = urllib.urlopen(varurl, params)
-  bot.say("uploaded")
+	params = urllib.urlencode(varparams)
+	urllib.urlopen(varurl, params)
+	bot.say("uploaded")
