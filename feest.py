@@ -3,4 +3,4 @@ import random
 
 @commands('feest')
 def ans(bot, trigger):
-	bot.reply("WOOP WOOP!")
+	bot.say("WOOP WOOP!")
