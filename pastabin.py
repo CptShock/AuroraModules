@@ -13,3 +13,4 @@ def ans(bot, trigger):
 def fetch(url, params):
   params = urllib.urlencode(varparams)
   f = urllib.urlopen(varurl, params)
+  bot.say("uploaded")
