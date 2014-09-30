@@ -7,7 +7,6 @@ def ans(bot, trigger):
 	varurl = "http://pastebin.com/api/api_post.php"
 	varpaste = "paste"
 	varparams = {"api_dev_key":vardevkey,"api_option":varpaste,"api_paste_code":vartest}
-	fetch(varurl,varparams)
 	params = urllib.urlencode(varparams)
 	urllib.urlopen(varurl, params)
 	bot.say("uploaded")
