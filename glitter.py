@@ -3,4 +3,4 @@ import random
 
 @commands('glitter')
 def ans(bot, trigger):
-	bot.say("*･°･*\(^O^)/*･°･*")
+	bot.reply("*･°･*\(^O^)/*･°･*")
