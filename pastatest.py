@@ -41,7 +41,7 @@ class Pastebin(object):
     _subdomain_url = 'http://%%s.%s/' % _base_domain
 
     # URL to the POST API
-    _api_url = 'http://%s/api_public.php' % _base_domain
+    _api_url = 'http://pastebin.com/api/api_post.php' % _base_domain
 
     # Valid paste_expire_date values
     paste_expire_date = ('N', '10M', '1H', '1D', '1M')
