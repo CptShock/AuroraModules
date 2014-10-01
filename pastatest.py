@@ -1,5 +1,9 @@
-import urllib
+import urllib,willie
 
+@willie.module.commands('pastatest')
+def ans(bot, trigger):
+    url = submit("This is a test message.")
+    bot.say(url)
 class Pastebin(object):
     """
     Unofficial python interface to the Pastebin legacy API.
@@ -358,6 +362,3 @@ if __name__ == "__main__":
                               paste_expire_date = options.expire,
                               paste_format = options.format)
         print "%s --> %s" % (filename, url)
-
-url = submit("This is a test message.")
-print(url)
