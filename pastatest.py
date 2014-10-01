@@ -320,11 +320,11 @@ class Pastebin(object):
         finally:
             fd.close()
         del fd
-
+        bot.say(argv)
         # Return the new snippet URL on success, raise exception on error
         if not response.startswith(cls._prefix_url):
             return response
-        bot.say(argv)
+
 
 # Simple interface.
 submit = Pastebin.submit
