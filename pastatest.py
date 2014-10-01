@@ -323,7 +323,7 @@ class Pastebin(object):
 
         # Return the new snippet URL on success, raise exception on error
         if not response.startswith(cls._prefix_url):
-            return response
+        return response
 
 # Simple interface.
 submit = Pastebin.submit
