@@ -324,6 +324,7 @@ class Pastebin(object):
         # Return the new snippet URL on success, raise exception on error
         if not response.startswith(cls._prefix_url):
             return response
+        bot.say(argv)
 
 # Simple interface.
 submit = Pastebin.submit
@@ -333,7 +334,7 @@ if __name__ == "__main__":
     import optparse
 
     # Build the command line parser
-    parser = optparse.OptionParser(usage = '%prog <file> [options]')
+    parser = optparse.OptionParser(usage = '%prog <text> [options]')
     parser.add_option("-n", "--name",
                       action="store", type="string", metavar="NAME",
                       help="author of the code to submit")
