@@ -4,6 +4,9 @@ import urllib,willie
 def ans(bot, trigger):
     url = submit("This is a test message.")
     bot.say(url)
+    bot.say("Joni is kaal")
+    bot.reply("mmhmmmhhhmmhmhmhmhmhmhmhmhmhmhmhmhmhmhm")
+
 class Pastebin(object):
     """
     Unofficial python interface to the Pastebin legacy API.
