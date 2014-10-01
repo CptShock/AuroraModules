@@ -6,7 +6,7 @@ def ans(bot, trigger):
     bot.say(url)
     bot.say(test+"123")
 
-def submit(cls, api_paste_code,api_paste_name = None, api_paste_private = None,api_paste_expire_date = None, api_paste_format = None):
+def submit(api_paste_code,api_paste_name = None, api_paste_private = None,api_paste_expire_date = None, api_paste_format = None):
     argv = { 'api_paste_code' : str(api_paste_code) }
     if api_paste_name is not None:
         argv['api_paste_name'] = str(api_paste_name)
