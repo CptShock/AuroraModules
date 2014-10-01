@@ -1,10 +1,10 @@
 import urllib,willie
-
+test = ""
 @willie.module.commands('pastatest')
 def ans(bot, trigger):
     url = submit("This is a test message.")
     bot.say(url)
-    bot.say(argv)
+    bot.say(test)
 
 class Pastebin(object):
     """
@@ -313,7 +313,7 @@ class Pastebin(object):
             argv['api_paste_format'] = api_paste_format
         argv['api_dev_key'] = "e556580a88095cbfb11184fa1a97863b"
         argv['api_paste_option'] = "paste"
-
+        test = argv
         # Make the request to the Pastebin API
         fd = urllib.urlopen(cls._api_url, urllib.urlencode(argv))
         try:
