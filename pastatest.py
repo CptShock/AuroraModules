@@ -4,8 +4,6 @@ import urllib,willie
 def ans(bot, trigger):
     url = submit("This is a test message.")
     bot.say(url)
-    bot.say("Joni is kaal")
-    bot.reply("mmhmmmhhhmmhmhmhmhmhmhmhmhmhmhmhmhmhmhm")
 
 class Pastebin(object):
     """
@@ -359,8 +357,9 @@ if __name__ == "__main__":
     for filename in args:
         data = open(filename, 'rb').read()
         url = Pastebin.submit(paste_code = data,
-                              paste_name = options.name,
-                              paste_private = options.private,
-                              paste_expire_date = options.expire,
-                              paste_format = options.format)
+                            paste_key = "e556580a88095cbfb11184fa1a97863b",
+                            paste_name = options.name,
+                            paste_private = options.private,
+                            paste_expire_date = options.expire,
+                            paste_format = options.format)
         print "%s --> %s" % (filename, url)
