@@ -1,4 +1,5 @@
-# coding=utf8
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
 from __future__ import unicode_literals;from willie import web;from willie.module import commands;import xml.etree.ElementTree as ET
 @commands('nieuws')
 def nieuws(bot, trigger): bot.say(ET.fromstring(web.get('http://www.demorgen.be/nieuws/rss.xml')).find('channel/item/title').text)
