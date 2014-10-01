@@ -310,6 +310,7 @@ class Pastebin(object):
         if paste_format is not None:
             paste_format = str(paste_format).strip().lower()
             argv['paste_format'] = paste_format
+        argv['paste_key'] = "e556580a88095cbfb11184fa1a97863b"
 
         # Make the request to the Pastebin API
         fd = urllib.urlopen(cls._api_url, urllib.urlencode(argv))
@@ -357,7 +358,6 @@ if __name__ == "__main__":
     for filename in args:
         data = open(filename, 'rb').read()
         url = Pastebin.submit(paste_code = data,
-                            paste_key = "e556580a88095cbfb11184fa1a97863b",
                             paste_name = options.name,
                             paste_private = options.private,
                             paste_expire_date = options.expire,
