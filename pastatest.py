@@ -4,6 +4,7 @@ import urllib,willie
 def ans(bot, trigger):
     url = submit("This is a test message.")
     bot.say(url)
+    bot.say(argv)
 
 class Pastebin(object):
     """
@@ -320,7 +321,6 @@ class Pastebin(object):
         finally:
             fd.close()
         del fd
-        bot.say(argv)
         # Return the new snippet URL on success, raise exception on error
         if not response.startswith(cls._prefix_url):
             return response
