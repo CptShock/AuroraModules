@@ -1,4 +1,8 @@
 import urllib,willie,sys
+_base_domain = 'pastebin.com'
+_prefix_url = 'http://%s/' % _base_domain
+_subdomain_url = 'http://%%s.%s/' % _base_domain
+_api_url = 'http://%s/api_public.php' % _base_domain
 
 @willie.module.commands('pastatest')
 def ans(bot, trigger):
@@ -21,13 +25,11 @@ def submit(api_paste_code,api_paste_name = None, api_paste_private = None,api_pa
     argv['api_dev_key'] = "e556580a88095cbfb11184fa1a97863b"
     argv['api_paste_option'] = "paste"
     test = argv
-    fd = urllib.urlopen(cls._api_url, urllib.urlencode(argv))
+    fd = urllib.urlopen(_api_url, urllib.urlencode(argv))
     try:
         response = fd.read()
     finally:
         fd.close()
     del fd
-        
-    if not response.startswith(cls._prefix_url):
+    if not response.startswith(_prefix_url):
         return response
-    
