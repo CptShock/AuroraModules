@@ -4,7 +4,7 @@ test = ""
 def ans(bot, trigger):
     url = submit("This is a test message.")
     bot.say(url)
-    bot.say(test)
+    bot.say(test+"123")
 
 class Pastebin(object):
     """
