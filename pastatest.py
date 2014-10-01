@@ -320,7 +320,6 @@ class Pastebin(object):
 
         # Return the new snippet URL on success, raise exception on error
         if not response.startswith(cls._prefix_url):
-            raise PastebinError(response)
         return response
 
 # Simple interface.
