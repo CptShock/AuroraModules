@@ -1,15 +1,12 @@
-import urllib,willie
-import sys
+import urllib,willie,sys
+
 @willie.module.commands('pastatest')
 def ans(bot, trigger):
     url = submit("This is a test message.")
     bot.say(url)
     bot.say(test+"123")
 
-    @classmethod
-def submit(cls, api_paste_code,
-            api_paste_name = None, api_paste_private = None,
-            api_paste_expire_date = None, api_paste_format = None):
+def submit(cls, api_paste_code,api_paste_name = None, api_paste_private = None,api_paste_expire_date = None, api_paste_format = None):
     argv = { 'api_paste_code' : str(api_paste_code) }
     if api_paste_name is not None:
         argv['api_paste_name'] = str(api_paste_name)
