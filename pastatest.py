@@ -291,7 +291,7 @@ class Pastebin(object):
         """
 
         # Code snippet to submit
-        argv = { 'api_paste_code' : str(paste_code) }
+        argv = { 'api_paste_code' : str(api_paste_code) }
 
         # Name of the poster
         if api_paste_name is not None:
