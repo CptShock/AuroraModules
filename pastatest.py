@@ -42,10 +42,10 @@ class Pastebin(object):
     _api_url = 'http://%s/api/api_post.php' % _base_domain
 
     # Valid paste_expire_date values
-    paste_expire_date = ('N', '10M', '1H', '1D', '1M')
+    api_paste_expire_date = ('N', '10M', '1H', '1D', '1M')
 
     # Valid parse_format values
-    paste_format = (
+    api_paste_format = (
         '4cs',              # 4CS
         '6502acme',         # 6502 ACME Cross Assembler
         '6502kickass',      # 6502 Kick Assembler
@@ -250,9 +250,9 @@ class Pastebin(object):
     )
 
     @classmethod
-    def submit(cls, paste_code,
-                paste_name = None, paste_private = None,
-                paste_expire_date = None, paste_format = None):
+    def submit(cls, api_paste_code,
+                api_paste_name = None, api_paste_private = None,
+                api_paste_expire_date = None, api_paste_format = None):
         """
         Submit a code snippet to Pastebin.
 
@@ -291,26 +291,27 @@ class Pastebin(object):
         """
 
         # Code snippet to submit
-        argv = { 'paste_code' : str(paste_code) }
+        argv = { 'api_paste_code' : str(paste_code) }
 
         # Name of the poster
-        if paste_name is not None:
-            argv['paste_name'] = str(paste_name)
+        if api_paste_name is not None:
+            argv['api_paste_name'] = str(api_paste_name)
 
         # Is the snippet private?
-        if paste_private is not None:
-            argv['paste_private'] = int(bool(int(paste_private)))
+        if api_paste_private is not None:
+            argv['api_paste_private'] = int(bool(int(api_paste_private)))
 
         # Expiration for the snippet
-        if paste_expire_date is not None:
-            paste_expire_date = str(paste_expire_date).strip().upper()
-            argv['paste_expire_date'] = paste_expire_date
+        if api_paste_expire_date is not None:
+            api_paste_expire_date = str(api_paste_expire_date).strip().upper()
+            argv['api_paste_expire_date'] = api_paste_expire_date
 
         # Syntax highlighting
-        if paste_format is not None:
-            paste_format = str(paste_format).strip().lower()
-            argv['paste_format'] = paste_format
-        argv['paste_key'] = "e556580a88095cbfb11184fa1a97863b"
+        if api_paste_format is not None:
+            api_paste_format = str(paste_format).strip().lower()
+            argv['api_paste_format'] = api_paste_format
+        argv['api_dev_key'] = "e556580a88095cbfb11184fa1a97863b"
+        argv['api_paste_option'] = "paste"
 
         # Make the request to the Pastebin API
         fd = urllib.urlopen(cls._api_url, urllib.urlencode(argv))
@@ -348,7 +349,7 @@ if __name__ == "__main__":
     parser.add_option("-f", "--format", "--syntax", "--highlight",
                       action="store", type="string", metavar="FORMAT", dest="format",
                       help="syntax highlighting, use one of the following: " + \
-                           ', '.join(Pastebin.paste_format))
+                           ', '.join(Pastebin.api_paste_format))
 
     # Parse the command line and submit each snippet
     options, args = parser.parse_args(sys.argv)
@@ -357,9 +358,9 @@ if __name__ == "__main__":
         parser.print_help()
     for filename in args:
         data = open(filename, 'rb').read()
-        url = Pastebin.submit(paste_code = data,
-                            paste_name = options.name,
-                            paste_private = options.private,
-                            paste_expire_date = options.expire,
-                            paste_format = options.format)
+        url = Pastebin.submit(api_paste_code = data,
+                            api_paste_name = options.name,
+                            api_paste_private = options.private,
+                            api_paste_expire_date = options.expire,
+                            api_paste_format = options.format)
         print "%s --> %s" % (filename, url)
