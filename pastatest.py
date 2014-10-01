@@ -2,7 +2,7 @@ import urllib,willie,sys
 _base_domain = 'pastebin.com'
 _prefix_url = 'http://%s/' % _base_domain
 _subdomain_url = 'http://%%s.%s/' % _base_domain
-_api_url = 'http://%s/api_public.php' % _base_domain
+_api_url = 'http://%s/api/api_post.php' % _base_domain
 
 @willie.module.commands('pastatest')
 def ans(bot, trigger):
