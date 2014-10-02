@@ -4,7 +4,7 @@ _prefix_url = 'http://%s/' % _base_domain
 _subdomain_url = 'http://%%s.%s/' % _base_domain
 _api_url = 'http://%s/api/api_post.php' % _base_domain
 
-@willie.module.commands('pastatest')
+@willie.module.commands('pb')
 def ans(bot, trigger):
     url = submit(trigger.group(2))
     bot.say(url)
