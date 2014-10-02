@@ -1,4 +1,5 @@
 import urllib,willie,sys
+test="123"
 _base_domain = 'pastebin.com'
 _prefix_url = 'http://%s/' % _base_domain
 _subdomain_url = 'http://%%s.%s/' % _base_domain
