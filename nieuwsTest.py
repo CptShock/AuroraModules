@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: latin-1 -*-
-from __future__ import unicode_literals;from willie import web;from willie.module import commands;import xml.etree.ElementTree as ET;import codecs
+import feedparser
 @commands('nieuwsT')
 def nieuws(bot, trigger):
-	text = ET.fromstring(web.get('http://www.demorgen.be/nieuws/rss.xml').encode('ascii', 'ignore')).find('channel/item/title').text
+	python_wiki_rss_url = "http://www.python.org/cgi-bin/moinmoin/" \
+                      "RecentChanges?action=rss_rc"
+    feed = feedparser.parse( python_wiki_rss_url )
+    bot.say(feed)
+    
