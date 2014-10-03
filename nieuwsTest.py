@@ -4,4 +4,4 @@ from __future__ import unicode_literals;from willie import web;from willie.modul
 @commands('nieuwsT')
 def nieuws(bot, trigger):
 	text = ET.fromstring(web.get('http://www.demorgen.be/nieuws/rss.xml')).find('channel/item/title').text.encode('ascii', ignore)
-	bot.say(text)
+	bot.say(text+"123")
