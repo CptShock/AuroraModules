@@ -450,7 +450,7 @@ _cp1252 = {
 
 _urifixer = re.compile('^([A-Za-z][A-Za-z0-9+-.]*://)(/*)(.*?)')
 def _urljoin(base, uri):
-    uri = _urifixer.sub(r'\1\3', uri)
+    uri = str(_urifixer.sub(r'\1\3', uri))
     #try:
     if not isinstance(uri, unicode):
         uri = uri.decode('utf-8', 'ignore')
