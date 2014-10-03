@@ -1,3 +1,4 @@
+import willie
 import feedparser
 @commands('nieuwsT')
 def nieuws(bot, trigger):
