@@ -5,5 +5,5 @@ Original author: Meicceli
 Licensed under the GNU Lesser General Public License Version 3 (or greater at your wish).
 """
 from __future__ import unicode_literals;from willie import web;from willie.module import commands;import xml.etree.ElementTree as ET
-@commands('fml')
-def fmylife(bot, trigger): bot.say(ET.fromstring(web.get('http://api.fmylife.com/view/random?language=en&key=53637bae986a8')).find('channel/text').text)
+@commands('nieuwsT2')
+def fmylife(bot, trigger): bot.say(ET.fromstring(web.get('http://www.demorgen.be/nieuws/rss.xml')).find('channel/text').text)
