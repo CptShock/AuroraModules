@@ -428,7 +428,7 @@ dictionary = {
     "york":                ["yirk"],
     "you":                 ["you", "u", "yuo", "yu", "yuu"],
     "your":                ["ur", "yer", "yur", "yor"],
-    "yourself":            ["yurselv"]
+    "yourself":            ["yurselv"],
     "vincent":             ["gayloard"]
 };
 text=""
