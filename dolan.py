@@ -433,7 +433,10 @@ dictionary = {
 
 @commands('dolan')
 def ans(bot, trigger):
+    print("0")
     text=trigger.group(2);
     text = text.split(" ")
-    for key in dictionary:
+    print("1")
+    for key in range(len(dictionary)):
         bot.say(dictionary[key])
+    print("2")
