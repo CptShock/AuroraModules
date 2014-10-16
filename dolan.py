@@ -439,7 +439,7 @@ def ans(bot, trigger):
     newtext=""
     for key in text:
         try:
-            newtext += str(dictionary[key][1]) + " "
+            newtext += str(dictionary[key][0]) + " "
         except:
             newtext += key + " "
     bot.say(str(newtext))
