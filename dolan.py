@@ -437,7 +437,7 @@ def ans(bot, trigger):
     text = text.split(" ")
     newtext=""
     for key in text:
-    try:
+        try:
             newtext += str(dictionary[key][1]) + " "
         except:
             newtext += key + " "
