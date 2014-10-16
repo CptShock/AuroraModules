@@ -1,4 +1,4 @@
-import willie.module
+from willie.module import commands
 dictionary = {
     "about":               ["abt", "abot"],
     "above":               ["aboev"],
@@ -430,13 +430,15 @@ dictionary = {
     "your":                ["ur", "yer", "yur", "yor"],
     "yourself":            ["yurselv"]
 };
-
+text=""
 @commands('dolan')
 def ans(bot, trigger):
-    print("0")
-    text=trigger.group(2);
+    text = trigger.group(2);
     text = text.split(" ")
-    print("1")
-    for key in range(len(dictionary)):
-        bot.say(dictionary[key])
-    print("2")
+    newtext=""
+    for key in text:
+    try:
+            newtext += str(dictionary[key][1]) + " "
+        except:
+            newtext += key + " "
+    bot.say(str(newtext))
