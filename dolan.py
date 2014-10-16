@@ -436,4 +436,4 @@ def ans(bot, trigger):
     text=trigger.group(2);
     text = text.split(" ")
     for key in dictionary:
-        bot.say("dictionary[key]")
+        bot.say(dictionary[key])
